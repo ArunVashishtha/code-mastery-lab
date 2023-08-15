@@ -1,11 +1,11 @@
 <div class="bg-theme p-5">
-   <div class="container">
+   <div class="container" *ngIf="categoryObj">
       <h1 class="text-white">{{categoryObj.category}}</h1>
-      <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio atque unde fugit iure harum, ratione distinctio aspernatur quibusdam in delectus laborum eum cupiditate et quas ad quisquam voluptatibus, maiores rem!</p>
+      <p class="text-white">{{categoryObj.categoryDescription}}</p>
    </div>
 </div>
 <div class="container mt-5 mb-5">
-<div class="row">
+<div class="row" *ngIf="postArray">
    <div class="col-md-4 mb-3" *ngFor="let post of postArray">
       <app-post-card [postData]="post" ></app-post-card>
    </div>

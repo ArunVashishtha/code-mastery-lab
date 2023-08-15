@@ -6,5 +6,6 @@ nav {
 
 .nav-link {
    text-transform: uppercase;
-   color: var(--body-text-color);
+   color: var(--primary-color);
+   font-weight: bold;
 }

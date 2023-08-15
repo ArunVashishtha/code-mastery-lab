@@ -1,12 +1,14 @@
 footer {
    height: 130px;
    padding: 15px;
-   background-color: var(--navbar-footer-color);
+   background-color: var(--secondary-color);
 }
 .site-logo {
     font-size: 1.2em;
 }
-
+.nav.copyright {
+margin-top: 20px;
+}
 .nav-link {
    color: var(--primary-color);
 }

@@ -11,7 +11,7 @@
 
 body {
    font-family: 'Roboto', sans-serif;
-   font-size: 12px;
+   font-size: 20px;
    color: var(--body-text-color);
    display: contents;
 }
@@ -36,11 +36,12 @@ body {
 .text-theme-primary {
    color: var(--primary-color);
 }
+
 input[type = text], input[type = email] {
    height: 60px;
    padding-left: 20px;
    font-size: 13px;
-   width: 100%;
+   width: 100% !important;
  }
  .btn-theme {
    height: 58px;

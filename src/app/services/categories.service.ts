@@ -18,4 +18,8 @@ export class CategoriesService {
       })
     }));
   }
+
+  loadSingleCategory(categoryId: string) {
+    return this.afs.doc(`categories/${categoryId}`).valueChanges();
+  }
 }

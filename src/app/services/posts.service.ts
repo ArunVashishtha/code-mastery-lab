@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/compat/app';
 import { map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class PostsService {
     }));
   }
 
-  loadCategory(categoryId:string) {
+  loadCategory(categoryId: string) {
     return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', categoryId).limit(4)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
@@ -54,12 +55,12 @@ export class PostsService {
     }));
   }
 
-  countViews(postId:string) {
-    // const viewCount = {
-    //   views: firebase.default.firestore.FieldValue.increment(1)
-    // }
-    // this.afs.doc(`post/${postId}`).update(viewCount).then(() => {
-    //   console.log('count updated');
-    // })
+  countViews(postId: string) {
+    const docRef = this.afs.collection('posts').doc(postId);
+
+    // Update the field using FieldValue.increment
+    docRef.update({
+      views: firebase.default.firestore.FieldValue.increment(1)
+    });
   }
 }
