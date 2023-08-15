@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "code-mastery-lab": {
+      "hosting": {
+        "code-mastery-lab": [
+          "code-mastery-lab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "code-mastery-lab"
+  }
+}

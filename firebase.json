@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "code-mastery-lab",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
