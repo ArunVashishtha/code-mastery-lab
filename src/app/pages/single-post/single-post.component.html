@@ -20,8 +20,8 @@
                <p [innerHTML]="postData.content"></p>
             </div>
          </div>
-         <app-comment-form></app-comment-form>
-         <app-comments-list></app-comments-list>
+         <app-comment-form [postId]="postId"></app-comment-form>
+         <app-comments-list [postId]="postId" [comments]="commentsList"></app-comments-list>
       </div>
       
       <div class="col-md-3" *ngIf="similarPosts">

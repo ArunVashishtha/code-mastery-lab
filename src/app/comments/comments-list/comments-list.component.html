@@ -1,35 +1,33 @@
 <div class="card mb-5 mt-5 pb-5 shadow-effect">
-   <div class="card-body">
-      <h4 class="mt-3 mb-3">Comments (15, 222)</h4>
-      <div class="comment-box mt-3">
-         <h6 class="mb-0">John Doe</h6>
-         <small class="text-danger">Last updated - July 20, 2023</small>
-         <div class="mt-3 mb-3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut officiis nisi exercitationem tempore rerum facere perspiciatis accusamus assumenda, consequatur, inventore voluptatibus voluptatum commodi perferendis, maiores adipisci necessitatibus quam eum dolore!
+   <div class="card-body" *ngIf="comments">
+      <h4 class="mt-3 mb-3">Comments ({{comments.length}})</h4>
+      <div class="comment-box mt-3" *ngFor="let comment of comments">
+         <div class="comment">
+            <h6 class="mb-0">{{comment.name}}</h6>
+            <small class="text-danger">Posted on - {{comment.createdAt.toMillis() | date}}</small>
+            <div class="mt-3 mb-3">
+               {{comment.commentText}}
+            </div>
+            <button (click)="onSelectComment(comment, false)">Reply</button>
+            <button class="ml-3" (click)="onSelectComment(comment, true)">View Reply</button>
          </div>
-         <a href="#" class="mt-1"> Reply </a>
-         <a href="#" class="mt-1 ml-2"> View Reply </a>
-      <hr>
-      </div>
-      <div class="comment-box mt-3">
-         <h6 class="mb-0">John Doe</h6>
-         <small class="text-danger">Last updated - July 20, 2023</small>
-         <div class="mt-3 mb-3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut officiis nisi exercitationem tempore rerum facere perspiciatis accusamus assumenda, consequatur, inventore voluptatibus voluptatum commodi perferendis, maiores adipisci necessitatibus quam eum dolore!
+         <div class="replies" *ngIf="!comment.showAllReplies">
+            <div class="col-md-6">
+               <textarea [(ngModel)]="newReply" placeholder="Add a reply"></textarea>
+            </div>
+            <div class="col-md-6">
+               <button (click)="onSubmitReply(comment.id)">Post Reply</button>
+            </div>
          </div>
-         <a href="#" class="mt-1"> Reply </a>
-         <a href="#" class="mt-1 ml-2"> View Reply </a>
-      <hr>
-      </div>
-      <div class="comment-box mt-3">
-         <h6 class="mb-0">John Doe</h6>
-         <small class="text-danger">Last updated - July 20, 2023</small>
-         <div class="mt-3 mb-3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut officiis nisi exercitationem tempore rerum facere perspiciatis accusamus assumenda, consequatur, inventore voluptatibus voluptatum commodi perferendis, maiores adipisci necessitatibus quam eum dolore!
+         <div *ngIf="comment.showAllReplies">
+         <div *ngFor="let reply of comment.replies">
+            <div class="reply">
+               <p>{{ reply.replyText }}</p>
+               <small>Posted on {{ reply.createdAt.toMillis() | date }}</small>
+            </div>
          </div>
-         <a href="#" class="mt-1"> Reply </a>
-         <a href="#" class="mt-1 ml-2"> View Reply </a>
-      <hr>
+         </div>
       </div>
+      <hr>
    </div>
 </div>
