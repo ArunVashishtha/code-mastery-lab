@@ -50,3 +50,11 @@ input[type = text], input[type = email] {
    color: var(--secondary-color);
    background-color: var(--primary-color);
  }
+ .bg-light {
+   padding: 10px;
+}
+.ellipsis {
+   text-overflow: ellipsis; /* enables ellipsis */
+   white-space: nowrap; /* keeps the text in a single line */
+   overflow: hidden; /* keeps the element from overflowing its parent */
+ }

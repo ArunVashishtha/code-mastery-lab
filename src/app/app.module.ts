@@ -21,6 +21,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.prod';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChapterListComponent } from './chapter-list/chapter-list.component';
+import { ChapterContentComponent } from './chapter-content/chapter-content.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     CommentsListComponent,
     AboutUsComponent,
-    PostCardComponent
+    PostCardComponent,
+    ChapterListComponent,
+    ChapterContentComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,

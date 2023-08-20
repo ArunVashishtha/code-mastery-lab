@@ -1,0 +1,5 @@
+<ul>
+   <li *ngFor="let chapter of chapters; let i = index" (click)="selectChapter(i)">
+      {{ chapter.title }}
+   </li>
+ </ul>

@@ -12,7 +12,7 @@ export class PostsService {
     private router: Router) { }
 
   loadFeatured() {
-    return this.afs.collection('posts', ref => ref.where('isFeatured', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('posts', ref => ref.where('isFeatured', '==', true).where('isEnablePost', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -22,7 +22,7 @@ export class PostsService {
   }
 
   loadLatest() {
-    return this.afs.collection('posts', ref => ref.orderBy('createdAt').limit(4)).snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('posts', ref => ref.orderBy('createdAt').where('isEnablePost', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -32,7 +32,7 @@ export class PostsService {
   }
 
   loadCategory(categoryId: string) {
-    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', categoryId).limit(4)).snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', categoryId).where('isEnablePost', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
@@ -46,7 +46,7 @@ export class PostsService {
   }
 
   loadSimilarPost(catId: string) {
-    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', catId).limit(4)).snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', catId).where('isEnablePost', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;

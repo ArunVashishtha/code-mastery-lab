@@ -1,0 +1,16 @@
+<div class="app-container">
+   <app-chapter-content [chapters]="chapters"  [selectedChapterIndex]="selectedChapterIndex"></app-chapter-content>
+ </div>
+ <div class="container">
+   <div class="sidebar">
+     <!-- Sidebar content -->
+     <app-chapter-list [chapters]="chapters" (chapterSelected)="selectChapter($event)"></app-chapter-list>
+   </div>
+   <div class="content">
+      <div *ngIf="chapter">
+         <h1>{{chapter.title}}</h1>
+         <p [innerHTML]="chapter.content"></p>
+      </div>
+      <!-- <app-chapter-content [chapters]="chapters"  [selectedChapterIndex]="selectedChapterIndex"></app-chapter-content> -->
+   </div>
+ </div>
