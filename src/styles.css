@@ -53,8 +53,15 @@ input[type = text], input[type = email] {
  .bg-light {
    padding: 10px;
 }
-.ellipsis {
-   text-overflow: ellipsis; /* enables ellipsis */
-   white-space: nowrap; /* keeps the text in a single line */
-   overflow: hidden; /* keeps the element from overflowing its parent */
+.ellipsis-multiline {
+   display: -webkit-box;
+   -webkit-line-clamp: 6;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+ }
+ 
+ .container-multiline {
+   overflow: hidden;
+   width: fit-content;
+   height: fit-content;
  }
