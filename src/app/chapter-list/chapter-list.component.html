@@ -1,5 +1,22 @@
+<div class="center-div">
+   {{category}}
+</div>
 <ul>
-   <li *ngFor="let chapter of chapters; let i = index" (click)="selectChapter(i)">
+   <li [ngClass]="{'active': selectedIndex == i}" *ngFor="let chapter of chapters; let i = index" (click)="selectChapter(i)">
       {{ chapter.title }}
    </li>
  </ul>
+
+ <!-- <div class="container-fluid p-0">
+   <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+       <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+           <div class="navbar-nav mr-auto py-0">
+               <div *ngFor="let chapter of chapters; let i = index">
+                  <div class="nav-item" (click)="selectChapter(i)">
+                     <a href="" class="nav-link">{{chapter.title}}</a>
+                  </div>
+               </div>
+           </div>
+       </div>
+   </nav>
+</div> -->

@@ -5,4 +5,44 @@
    overflow-y:scroll;
    overflow-x:hidden;
    padding-top:20px;
-   }
+}
+ul {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+ }
+/* Apply styles to list items in an unordered list */
+ul li {
+   list-style: none;
+    color: black;
+    height: auto; /* Set the desired height for list items */
+    display: flex; /* Use flex display for vertical centering */
+    align-items: center; /* Vertically center the content */
+    padding: 10px;
+   text-decoration: underline;
+ }
+ 
+ /* Apply underline to text when hovered */
+ ul li:hover {
+   cursor: pointer;
+   background-color: #FFCC00;
+   font-weight: 900;
+   text-decoration: underline;
+ }
+ 
+ /* Apply styles to the active list item */
+ ul li.active {
+   background-color: #FFCC00;
+   font-weight: bold;
+   text-decoration: underline;
+ }
+ .center-div {
+   color: black;
+   margin: 10px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ 

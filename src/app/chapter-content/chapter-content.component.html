@@ -1,6 +1,5 @@
 
    <!-- Content for the selected chapter -->
-   <div *ngIf="chapter">
-   <h2>{{chapter.title}}</h2>
-   <p>{{chapter.content}}</p>
+<div *ngIf="chapter">
+   <p [innerText]="chapter.content"></p>
 </div>

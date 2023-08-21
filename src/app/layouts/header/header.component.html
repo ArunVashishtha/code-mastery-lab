@@ -1,6 +1,55 @@
-<header class="navbar navbar-expand-lg fixed-top">
+<!-- Topbar Start -->
+<div class="container-fluid d-none d-lg-block">
+   <div class="row align-items-center bg-dark px-lg-5">
+       <div class="col-lg-9">
+           <nav class="navbar navbar-expand-sm bg-dark p-0">
+               <ul class="navbar-nav ml-n2">
+                   <li class="nav-item border-right border-secondary">
+                       <a class="nav-link text-body small" href="#">{{todayDate | date: 'medium'}}</a>
+                   </li>
+                   <li class="nav-item border-right border-secondary">
+                       <a class="nav-link text-body small" href="#" [routerLink]="['/contact']">Contact</a>
+                   </li>
+               </ul>
+           </nav>
+       </div>
+       <div class="col-lg-3 text-right d-none d-md-block">
+           <nav class="navbar navbar-expand-sm bg-dark p-0">
+               <ul class="navbar-nav ml-auto mr-n2">
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
+                   </li>
+               </ul>
+           </nav>
+       </div>
+   </div>
+   <div class="row align-items-center bg-white py-3 px-lg-5">
+       <div class="col-lg-4">
+           <a href="#" class="navbar-brand p-0 d-none d-lg-block">
+               <h1 class="m-0 display-4 text-uppercase text-primary">Code<span class="text-secondary font-weight-normal">Mastery</span></h1>
+           </a>
+       </div>
+   </div>
+</div>
+<!-- Topbar End -->
+<!-- <header class="navbar navbar-expand-lg fixed-top">
    <div class="container justify-content-center">
       <a href="#" class="site-logo" routerLink="/">Code Mastery Lab</a>
       <span class="slogan"><br>Unlocking code's secrets: Free Tutorials</span>
    </div>
-</header>
+</header> -->

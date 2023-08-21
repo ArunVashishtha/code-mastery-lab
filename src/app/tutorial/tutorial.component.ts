@@ -12,11 +12,13 @@ export class TutorialComponent implements OnInit {
   chapters!: Array<Chapter>;
   selectedChapterIndex!: number;
   chapter!: Chapter;
+  category!: string;
   constructor(private chapterService: ChapterService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(val => {
+      this.category = val['category'];
       this.fetchChaptersByCategoryId(val['id']);
     })
   }

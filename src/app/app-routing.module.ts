@@ -10,6 +10,7 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'category/:category/:id', component: SingleCategoryComponent },
   { path: 'tutorial/:category/:id', component: TutorialComponent },
   { path: 'post/:id', component: SinglePostComponent },

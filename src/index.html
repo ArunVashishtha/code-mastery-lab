@@ -2,12 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CodeMasteryLab</title>
+    <title>Code Mastery Lab - Free coding tutorials</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Coding Tutorials" name="keywords">
+    <meta content="Free Coding Tutorials and technical blogs" name="description">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
   <app-root></app-root>
+<script>
+  // JavaScript for copying code to clipboard
+document.addEventListener('DOMContentLoaded', function () {
+  const copyButtons = document.querySelectorAll('.copy-button');
+
+  copyButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const codeElement = button.parentElement.querySelector('code');
+      copyCodeToClipboard(codeElement.textContent);
+      button.textContent = 'Copied!';
+      setTimeout(() => {
+        button.textContent = 'Copy';
+      }, 2000);
+    });
+  });
+
+  function copyCodeToClipboard(code) {
+    const textArea = document.createElement('textarea');
+    textArea.value = code;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+  }
+});
+</script>
 </body>
 </html>

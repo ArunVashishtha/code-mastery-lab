@@ -1,3 +1,6 @@
 .card {
-   background-color: var(--secondary-color);
+   background-color: white;
+}
+.form-control {
+   width: 100%;
 }

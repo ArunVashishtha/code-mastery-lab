@@ -1,15 +1,66 @@
-<section class="featured-section">
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-12 text-center mt-5">
-            <h2 class="text-white"> Featured Posts </h2>
-            <p class="text-white">Immerse yourself in our 'Featured Post' series, where we spotlight the most captivating and thought-provoking content. Explore topics that push boundaries, inspire change, and encapsulate the pulse of technology, innovation, and creativity. Join us on a journey into the heart of ideas that shape the future.</p>
+<!-- Main News Slider Start -->
+<div class="container-fluid">
+   <div class="row">
+       <div class="col-lg-7 px-0">
+               <div class="position-relative overflow-hidden"
+                style="height: 500px;" *ngIf="featuredPosts && featuredPosts.length > 0">
+                   <img class="img-fluid h-100" src='{{featuredPosts[0].data.postImgPath}}' alt="featurepost" style="object-fit: cover;">
+                   <div class="overlay">
+                       <div class="mb-2">
+                           <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                               href="">{{featuredPosts[0].data.category.category}} </a>
+                           <a class="text-white" href="">{{featuredPosts[0].data.createdAt.toMillis() | date}}</a>
+                       </div>
+                       <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">{{featuredPosts[0].data.title}}</a>
+                   </div>
          </div>
-      </div>
-      <div class="row" *ngIf="featuredPosts && featuredPosts.length > 0">
-         <div class="col-lg-3" *ngFor="let featuredPost of featuredPosts">
-            <app-post-card [postData]="featuredPost"></app-post-card>
-         </div>
+       </div>
+       <div class="col-lg-5 px-0">
+           <div class="row mx-0" *ngIf="latestPosts && latestPosts.length > 0">
+               <div class="col-md-6 px-0" *ngFor="let latestPost of latestPosts">
+                   <div class="position-relative overflow-hidden" style="height: 250px;">
+                       <img class="img-fluid w-100 h-100"
+                       src='{{latestPost.data.postImgPath}}' style="object-fit: cover;">
+                       <div class="overlay">
+                           <div class="mb-2">
+                               <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                   href="">{{latestPost.data.category.category}} </a>
+                               <a class="text-white" href=""><small>{{latestPost.data.createdAt.toMillis() | date}}</small></a>
+                           </div>
+                           <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{latestPost.data.title}}</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Main News Slider End -->
+<!-- Breaking News Start -->
+<div class="container-fluid bg-dark py-3 mb-3">
+   <div class="container">
+       <div class="row align-items-center bg-dark">
+           <div class="col-12">
+               <div class="d-flex justify-content-between">
+                   <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Latest Blog</div>
+                   <div class="position-relative d-inline-flex align-items-center ml-3"
+                       style="width: calc(100% - 170px); padding-right: 90px;">
+                       <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">{{latestPosts?.[0].data.title}}</a></div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Breaking News End -->
+<section class="container mt-5">
+   <div class="col-md-12 text-center">
+      <h2> Featured Posts</h2>
+      <p>Immerse yourself in our 'Featured Post' series, where we spotlight the most captivating and thought-provoking content. Explore topics that push boundaries, inspire change, and encapsulate the pulse of technology, innovation, and creativity. Join us on a journey into the heart of ideas that shape the future.</p>
+   </div>
+   <div class="row">
+      <div class="col-md-4 mt-3" *ngFor="let post of featuredPosts">
+         <app-post-card [postData]="post"></app-post-card>
       </div>
    </div>
 </section>

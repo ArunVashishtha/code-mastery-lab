@@ -8,13 +8,16 @@ import { Chapter } from '../models/chapter';
 })
 export class ChapterListComponent implements OnInit {
   @Output() chapterSelected = new EventEmitter<number>();
-  @Input() chapters!:Array<Chapter>;
+  @Input() category!: string;
+  @Input() chapters!: Array<Chapter>;
+  selectedIndex!: number;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   selectChapter(index: number) {
+    this.selectedIndex = index;
     this.chapterSelected.emit(index);
   }
 }
