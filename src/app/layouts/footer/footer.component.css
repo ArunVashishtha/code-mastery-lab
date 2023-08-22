@@ -12,3 +12,6 @@ margin-top: 20px;
 .nav-link {
    color: var(--primary-color);
 }
+p {
+   color: white;
+}

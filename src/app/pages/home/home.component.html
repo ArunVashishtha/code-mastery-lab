@@ -19,7 +19,7 @@
            <div class="row mx-0" *ngIf="latestPosts && latestPosts.length > 0">
                <div class="col-md-6 px-0" *ngFor="let latestPost of latestPosts">
                    <div class="position-relative overflow-hidden" style="height: 250px;">
-                       <img class="img-fluid w-100 h-100"
+                       <img class="img-fluid w-100 h-100" alt="latest posts"
                        src='{{latestPost.data.postImgPath}}' style="object-fit: cover;">
                        <div class="overlay">
                            <div class="mb-2">
