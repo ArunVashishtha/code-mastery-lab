@@ -10,7 +10,7 @@ export class CategoriesService {
   constructor(private afs: AngularFirestore) { }
   
   loadData() {
-    return this.afs.collection('categories').snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('categories', ref=> ref.where('isFeatured', '==', true)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;

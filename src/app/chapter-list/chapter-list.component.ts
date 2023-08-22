@@ -14,6 +14,7 @@ export class ChapterListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.selectChapter(0);
   }
 
   selectChapter(index: number) {

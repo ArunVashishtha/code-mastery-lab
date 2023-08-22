@@ -27,6 +27,7 @@ export class TutorialComponent implements OnInit {
   fetchChaptersByCategoryId(categoryId: string) {
     this.chapterService.getChaptersByCategoryId(categoryId).subscribe((chapters) => {
       this.chapters = chapters;
+      this.selectChapter(0);
     });
   }
 

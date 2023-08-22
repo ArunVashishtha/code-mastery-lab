@@ -31,6 +31,7 @@
    background-color: #fff;
    padding: 20px;
    border-left: 1px solid #ddd;
+   overflow-x: auto;
  }
  
  .content h2 {

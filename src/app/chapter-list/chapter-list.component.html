@@ -1,7 +1,7 @@
 <div class="center-div">
    {{category}}
 </div>
-<ul>
+<ul *ngIf="chapters">
    <li [ngClass]="{'active': selectedIndex == i}" *ngFor="let chapter of chapters; let i = index" (click)="selectChapter(i)">
       {{ chapter.title }}
    </li>

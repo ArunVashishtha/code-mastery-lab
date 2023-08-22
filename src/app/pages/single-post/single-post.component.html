@@ -4,16 +4,16 @@
          <div class="card shadow-effect">
             <img src="{{postData.postImgPath}}" alt="" class="card-img-top img-fluid">
             <div class="card-body">
-               <small class="bg-light text-danger text-center">
+               <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2">
                   {{postData.category.category}}
                </small>
-               <small class="bg-light text-success text-center ml-2">
+               <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2">
                   Featured
                </small>
-               <small class="bg-light text-info text-center ml-2">
+               <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2">
                   Views - {{postData.views}}
                </small>
-               <small class="bg-light text-warning text-center ml-2">
+               <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2">
                   LAST UPDATED - {{postData.createdAt.toMillis() | date}}
                </small>
                <h1 class="mt-3 mb-3">{{postData.title}}</h1>

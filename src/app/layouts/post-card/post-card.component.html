@@ -1,7 +1,7 @@
 <div class="card shadow-effect" *ngIf="postData?.data" [routerLink]="['/post', postData.id]">
    <img src='{{postData.data.postImgPath}}' alt="post image" class="card-img-top">
    <div class="card-body container-multiline">
-   <small class="bg-light text-danger text-center"> {{postData.data.category.category}} </small>
+   <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"> {{postData.data.category.category}} </small>
    
    <!-- <small class="bg-light text-success text-center ml-3" *ngIf="postData.data.isFeatured"> Featured </small>
     -->

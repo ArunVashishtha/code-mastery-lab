@@ -4,7 +4,7 @@
       <p>{{categoryObj.categoryDescription}}</p>
    </div>
 </div>
-<div class="container mt-5 mb-5">
+<div class="container mb-5">
 <div class="row" *ngIf="postArray">
    <div class="col-md-4 mb-3" *ngFor="let post of postArray">
       <app-post-card [postData]="post" ></app-post-card>
