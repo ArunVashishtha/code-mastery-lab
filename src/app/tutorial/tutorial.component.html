@@ -2,7 +2,7 @@
    <app-chapter-content [chapters]="chapters"  [selectedChapterIndex]="selectedChapterIndex"></app-chapter-content>
  </div>
  <div class="container">
-   <div class="sidebar">
+   <div class="sidebar" *ngIf="chapters">
      <!-- Sidebar content -->
      <app-chapter-list [chapters]="chapters" [category]="category" (chapterSelected)="selectChapter($event)"></app-chapter-list>
    </div>

@@ -33,7 +33,7 @@
     });
 
 
-    // Main News carousel
+    // Main   carousel
     $(".main-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
