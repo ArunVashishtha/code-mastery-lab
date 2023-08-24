@@ -11,7 +11,7 @@
            <div class="navbar-nav mr-auto py-0">
                <a href="" [routerLink]="['/home']" routerLinkActive="active" class="nav-item nav-link">Home</a>
                <div *ngFor="let category of categoryArray">
-                  <div class="nav-item" *ngIf="category.data.contentType === 'Blog'">
+                  <div class="nav-item" *ngIf="category.data.contentType != 'Tutorial'">
                      <a href="" routerLinkActive="active" class="nav-link"
                      [routerLink]="['/category',category.data.category, category.id]">{{category.data.category}}</a>
                   </div>
