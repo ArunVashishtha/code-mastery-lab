@@ -19,9 +19,9 @@ export class CommentsListComponent implements OnInit {
   }
 
   onSelectComment(comment: any, showReplies = false) {
+    comment.showAllReplies = !comment.showAllReplies;
     if (!showReplies) {
       this.selectedCommentId = '';
-      comment.showAllReplies = false;
     } else {
       comment.showAllReplies = true;
       this.loadReplies(comment);

@@ -11,7 +11,7 @@
                                href="">{{featuredPosts[0].data.category.category}} </a>
                            <a class="text-white" href="">{{featuredPosts[0].data.createdAt.toMillis() | date}}</a>
                        </div>
-                       <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">{{featuredPosts[0].data.title}}</a>
+                       <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="" [routerLink]="['/post', featuredPosts[0].id]">{{featuredPosts[0].data.title}}</a>
                    </div>
          </div>
        </div>
@@ -27,7 +27,7 @@
                                    href="">{{latestPost.data.category.category}} </a>
                                <a class="text-white" href=""><small>{{latestPost.data.createdAt.toMillis() | date}}</small></a>
                            </div>
-                           <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{latestPost.data.title}}</a>
+                           <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="" [routerLink]="['/post', latestPost.id]">{{latestPost.data.title}}</a>
                        </div>
                    </div>
                </div>

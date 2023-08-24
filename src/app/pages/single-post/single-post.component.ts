@@ -33,7 +33,7 @@ export class SinglePostComponent implements OnInit {
     this.commentService.getComments(postId).subscribe(comments => {
       this.commentsList = comments;
       this.commentsList.forEach((element: { showAllReplies: boolean; }) => {
-        element.showAllReplies = false;
+        element.showAllReplies = true;
       });
     });
   }
