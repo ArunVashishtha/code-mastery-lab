@@ -4,7 +4,7 @@
  <div class="container">
    <div class="sidebar" *ngIf="chapters">
      <!-- Sidebar content -->
-     <app-chapter-list [chapters]="chapters" [category]="category" (chapterSelected)="selectChapter($event)"></app-chapter-list>
+     <app-chapter-list [chapters]="chapters" [category]="category" [selectedChapterIndex]="selectedChapterIndex" (chapterSelected)="selectChapter($event)"></app-chapter-list>
    </div>
    <div class="content">
       <div *ngIf="chapter">

@@ -11,10 +11,11 @@ export class ChapterListComponent implements OnInit {
   @Input() category!: string;
   @Input() chapters!: Array<Chapter>;
   selectedIndex!: number;
+  @Input() selectedChapterIndex: number = 0;
   constructor() { }
 
   ngOnInit(): void {
-    this.selectChapter(0);
+    this.selectChapter(1);
   }
 
   selectChapter(index: number) {

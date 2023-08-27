@@ -10,7 +10,7 @@ export class ChapterService {
 
   getChaptersByCategoryId(categoryId: string): Observable<any[]> {
     return this.firestore
-      .collection('chapters', (ref) => ref.where('category.id', '==', categoryId).where('isFeatured', '==', true))
+      .collection('chapters', (ref) => ref.where('category.id', '==', categoryId).where('isFeatured', '==', true).orderBy('chapterNumber'))
       .valueChanges();
   }
 

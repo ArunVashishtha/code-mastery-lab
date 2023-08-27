@@ -32,7 +32,7 @@ export class PostsService {
   }
 
   loadCategory(categoryId: string) {
-    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', categoryId).where('isEnablePost', '==', true).limit(4)).snapshotChanges().pipe(map(actions => {
+    return this.afs.collection('posts', ref => ref.where('category.categoryId', '==', categoryId).where('isEnablePost', '==', true)).snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;

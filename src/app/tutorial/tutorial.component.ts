@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChapterService } from '../services/chapter.service';
 import { Chapter } from '../models/chapter';
 import { ActivatedRoute } from '@angular/router';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-tutorial',
   templateUrl: './tutorial.component.html',
-  styleUrls: ['./tutorial.component.css']
+  styleUrls: ['./tutorial.component.css'],
 })
 export class TutorialComponent implements OnInit {
   chapters!: Array<Chapter>;
@@ -14,7 +15,8 @@ export class TutorialComponent implements OnInit {
   chapter!: Chapter;
   category!: string;
   constructor(private chapterService: ChapterService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+  private seoService: SeoService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(val => {
@@ -27,12 +29,13 @@ export class TutorialComponent implements OnInit {
   fetchChaptersByCategoryId(categoryId: string) {
     this.chapterService.getChaptersByCategoryId(categoryId).subscribe((chapters) => {
       this.chapters = chapters;
-      this.selectChapter(0);
+      this.selectChapter(1);
     });
   }
 
   selectChapter($event: any) {
     this.selectedChapterIndex = $event;
-    this.chapter = this.chapters?.[this.selectedChapterIndex];
+    this.chapter = this.chapters?.[this.selectedChapterIndex - 1];
+    this.seoService.setSEOTags(this.chapter.title, this.chapter.description);
   }
 }
