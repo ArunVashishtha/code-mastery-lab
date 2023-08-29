@@ -1,4 +1,4 @@
-<div class="card shadow-effect" *ngIf="postData?.data" [routerLink]="['/post', postData.id]">
+<div class="card shadow-effect" *ngIf="postData?.data" [routerLink]="['/post', getSlug(postData.data.title), postData.id]">
    <img src='{{postData.data.postImgPath}}' alt="post image" class="card-img-top">
    <div class="card-body container-multiline">
    <small class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"> {{postData.data.category.category}} </small>
@@ -6,7 +6,9 @@
    <!-- <small class="bg-light text-success text-center ml-3" *ngIf="postData.data.isFeatured"> Featured </small>
     -->
    <!-- <small class="bg-light text-info text-center ml-3"> Views- {{postData.data.views}} </small> -->
-   <h5 class="mt-1 ellipsis-multiline"> {{postData.data.title}}</h5>
+   <h5 class="mt-1 ellipsis-multiline">
+    <a class="font-weight-semi-bold p-2 mr-2" [routerLink]="['/post', getSlug(postData.data.title), postData.id]">
+    {{postData.data.title}}</a></h5>
    <!-- <p class="ellipsis">{{postData.data.excerpt}}</p> -->
    <!-- <small class="bg-light text-warning text-center ml-3">LAST UPDATED - {{postData.data.createdAt.toMillis() | date}}</small>
     -->

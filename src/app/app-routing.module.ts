@@ -7,20 +7,23 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'category/:category/:id', component: SingleCategoryComponent },
   { path: 'tutorial/:category/:id', component: TutorialComponent },
-  { path: 'post/:id', component: SinglePostComponent },
+  { path: 'tutorial/:category/:chapterTitle/:number', component: TutorialComponent },
+  { path: 'post/:slug/:id', component: SinglePostComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'terms-and-condtions', component: TermsAndConditionsComponent },
-  {path: 'contact', component: ContactUsComponent}
+  { path: 'contact', component: ContactUsComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterContentComponent } from './chapter-content/chapter-content.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +44,11 @@ import { TutorialComponent } from './tutorial/tutorial.component';
     PostCardComponent,
     ChapterListComponent,
     ChapterContentComponent,
-    TutorialComponent
+    TutorialComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

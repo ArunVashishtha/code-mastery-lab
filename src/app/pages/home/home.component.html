@@ -1,33 +1,19 @@
 <!-- Main Slider Start -->
 <div class="container-fluid">
    <div class="row">
-       <div class="col-lg-7 px-0">
-               <div class="position-relative overflow-hidden"
-                style="height: 500px;" *ngIf="featuredPosts && featuredPosts.length > 0">
-                   <img class="img-fluid h-100" src='{{featuredPosts[0].data.postImgPath}}' alt="featurepost" style="object-fit: cover;">
-                   <div class="overlay">
-                       <div class="mb-2">
-                           <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                               href="">{{featuredPosts[0].data.category.category}} </a>
-                           <a class="text-white" href="">{{featuredPosts[0].data.createdAt.toMillis() | date}}</a>
-                       </div>
-                       <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="" [routerLink]="['/post', featuredPosts[0].id]">{{featuredPosts[0].data.title}}</a>
-                   </div>
-         </div>
-       </div>
-       <div class="col-lg-5 px-0">
-           <div class="row mx-0" *ngIf="latestPosts && latestPosts.length > 0">
-               <div class="col-md-6 px-0" *ngFor="let latestPost of latestPosts">
-                   <div class="position-relative overflow-hidden" style="height: 250px;">
-                       <img class="img-fluid w-100 h-100" alt="latest posts"
-                       src='{{latestPost.data.postImgPath}}' style="object-fit: cover;">
+       <div class="col-lg-12 px-0">
+           <div class="row mx-0" *ngIf="chapters && chapters.length > 0">
+               <div class="col-md-3 px-0" *ngFor="let chapter of chapters">
+                   <div class="position-relative overflow-hidden" style="height: 200px; width: 100%;">
+                       <img class="img-fluid w-100 h-100" alt="latest chapters"
+                       src='{{chapter.data.image}}' style="object-fit: cover;">
                        <div class="overlay">
                            <div class="mb-2">
                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                   href="">{{latestPost.data.category.category}} </a>
-                               <a class="text-white" href=""><small>{{latestPost.data.createdAt.toMillis() | date}}</small></a>
+                                   href="">{{chapter.data.category.description}} </a>
+                               <a class="text-white" href=""><small>{{chapter.data.createdAt.toMillis() | date}}</small></a>
                            </div>
-                           <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="" [routerLink]="['/post', latestPost.id]">{{latestPost.data.title}}</a>
+                           <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="" [routerLink]="['/tutorial', getSlug(chapter.data.category.description), chapter.data.category.id]">{{chapter.data.title}}</a>
                        </div>
                    </div>
                </div>

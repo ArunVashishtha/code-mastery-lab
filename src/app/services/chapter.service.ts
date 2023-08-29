@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { Chapter } from '../models/chapter';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChapterService {
+  chapters!: Array<Chapter>;
   constructor(private firestore: AngularFirestore) {}
 
   getChaptersByCategoryId(categoryId: string): Observable<any[]> {

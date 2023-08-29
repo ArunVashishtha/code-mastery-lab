@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/code-mastery-lab",
+            "outputPath": "dist/code-mastery-lab/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -106,6 +106,64 @@
             "version": 2,
             "browserTarget": "code-mastery-lab:build:production"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/code-mastery-lab/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "code-mastery-lab:build:development",
+              "serverTarget": "code-mastery-lab:server:development"
+            },
+            "production": {
+              "browserTarget": "code-mastery-lab:build:production",
+              "serverTarget": "code-mastery-lab:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "code-mastery-lab:build:production",
+              "serverTarget": "code-mastery-lab:server:production"
+            },
+            "development": {
+              "browserTarget": "code-mastery-lab:build:development",
+              "serverTarget": "code-mastery-lab:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

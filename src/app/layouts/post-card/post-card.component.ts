@@ -11,5 +11,7 @@ export class PostCardComponent implements OnInit {
   ngOnInit() {
     console.log('post'+ this.postData);
   }
-
+  getSlug(description: string) {
+    return description.toLowerCase().replace(/\s/g, '-')
+  }
 }

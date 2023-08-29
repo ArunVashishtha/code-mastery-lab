@@ -16,5 +16,7 @@ export class CategoryNavbarComponent implements OnInit {
       this.categoryArray = values;
     })
   }
-
+  getSlug(description: string) {
+    return description.toLowerCase().replace(/\s/g, '-')
+  }
 }

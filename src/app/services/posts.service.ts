@@ -63,4 +63,14 @@ export class PostsService {
       views: firebase.default.firestore.FieldValue.increment(1)
     });
   }
+
+  loadChapters() {
+    return this.afs.collection('chapters', ref => ref.where('isFeatured', '==', true)).snapshotChanges().pipe(map(actions => {
+      return actions.map(a => {
+        const data:any = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        return { id, data };
+      })
+    }));
+  }
 }
