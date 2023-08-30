@@ -12,7 +12,7 @@ import { SeoService } from '../services/seo.service';
 export class TutorialComponent implements OnInit {
   chapters!: Array<Chapter>;
   selectedChapterIndex!: number;
-  chapter!: Chapter;
+  chapter!: any;
   category!: string;
   constructor(private chapterService: ChapterService,
     private route: ActivatedRoute,
@@ -35,7 +35,7 @@ export class TutorialComponent implements OnInit {
 
   selectChapter($event: any) {
     this.selectedChapterIndex = $event;
-    this.chapter = this.chapters?.[this.selectedChapterIndex - 1];
+    this.chapter = this.chapters?.find(c=> c.chapterNumber === this.selectedChapterIndex);
     this.seoService.setSEOTags(this.chapter.title, this.chapter.description);
   }
 }
