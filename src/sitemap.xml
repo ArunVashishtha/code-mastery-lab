@@ -1,7 +1,5 @@
-
-  <?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
         <loc>https://codemasterylab.com/home</loc>
         <lastmod>2023-09-13</lastmod>
@@ -24,7 +22,7 @@
       </url>
     
       <url>
-        <loc>https://codemasterylab.com/tutorial/top-50-q&a/BBrFNjzc69UMhypYsUkw</loc>
+        <loc>https://codemasterylab.com/tutorial/top-50-q&amp;a/BBrFNjzc69UMhypYsUkw</loc>
         <lastmod>2023-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -197,5 +195,4 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
       </url>
-    
   </urlset>
